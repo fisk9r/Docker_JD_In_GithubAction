@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
-    - name: Checkout
+    - name: 检查环境
       uses: actions/checkout@main
       
-    - name: 安装docker-compose
+    - name: 安装 docker-compose
       run: |
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
         pip3 install --upgrade pip
