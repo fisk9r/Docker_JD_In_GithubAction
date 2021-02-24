@@ -48,10 +48,6 @@ jobs:
       run: |
         cd /home/runner/work/jd_scripts
         sudo docker exec -i jd_scripts /bin/sh -c 'env'
-    - name: 运行    git pull
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'git pull'
     - name: 运行    jd_bean_change.js
       run: |
         cd /home/runner/work/jd_scripts
