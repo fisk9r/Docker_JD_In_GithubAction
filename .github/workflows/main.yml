@@ -8,6 +8,7 @@ on:
 env:
   REPO_URL: https://github.com/cyz0105/Docker_JD_In_GithubAction.git
   REPO_BRANCH: master
+  TZ: Asia/Shanghai
 jobs:
   run-JD-tool:
     runs-on: ubuntu-latest
