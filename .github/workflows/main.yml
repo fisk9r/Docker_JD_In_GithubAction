@@ -40,6 +40,8 @@ jobs:
     
     - name: 运行脚本
       run: |
-        cd $GITHUB_WORKSPACE 
+        mkdir /home/runner/work/jd_scripts
+        cp -r $GITHUB_WORKSPACE/* /home/runner/work/jd_scripts
+        cd /home/runner/work/jd_scripts 
         sh auto.sh
         sh auto.sh
