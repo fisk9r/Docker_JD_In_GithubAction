@@ -1,4 +1,6 @@
 sudo docker-compose up -d
+sudo docker exec -i jd_scripts /bin/sh -c 'env'
+sleep 20
 sudo docker exec -i jd_scripts /bin/sh -c 'git pull'
 sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_change.js'
 sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_sign.js'
