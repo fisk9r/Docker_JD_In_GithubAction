@@ -47,10 +47,7 @@ jobs:
       run: |
         cd /home/runner/work/jd_scripts
         sudo docker exec -i jd_scripts /bin/sh -c 'env'
-    - name: 运行    jd_joy_reward.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_reward.js'
+   
     - name: 运行    jd_shop.js
       run: |
         cd /home/runner/work/jd_scripts
@@ -143,7 +140,10 @@ jobs:
       run: |
         cd /home/runner/work/jd_scripts
         sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_feedPets.js'
-    
+    - name: 运行    jd_joy_reward.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_reward.js'
     - name: 运行    jd_joy_run.js
       run: |
         cd /home/runner/work/jd_scripts
