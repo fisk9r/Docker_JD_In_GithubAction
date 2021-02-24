@@ -42,6 +42,5 @@ jobs:
       run: |
         mkdir /home/runner/work/jd_scripts
         cp -r $GITHUB_WORKSPACE/* /home/runner/work/jd_scripts
-        cd /home/runner/work/jd_scripts 
-        sh auto.sh
+        cd /home/runner/work/jd_scripts
         sh auto.sh
