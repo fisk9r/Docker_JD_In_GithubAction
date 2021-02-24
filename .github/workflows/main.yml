@@ -49,30 +49,7 @@ jobs:
         cd /home/runner/work/jd_scripts
         sudo docker exec -i jd_scripts /bin/sh -c 'env'
         
-    - name: 运行    jd_beauty.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_beauty.js'
-    - name: 运行    jd_bean_change.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_change.js'
-    - name: 运行    jd_bean_sign.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_sign.js'
-    - name: 运行    jd_fruit.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_fruit.js'
-    - name: 运行    jd_dreamFactory.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_dreamFactory.js'
-    - name: 运行    jd_jxnc.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jxnc.js'
+
     - name: 运行    jd_bean_home.js
       run: |
         cd /home/runner/work/jd_scripts
