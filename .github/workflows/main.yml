@@ -40,5 +40,6 @@ jobs:
     
     - name: 运行脚本
       run: |
+        cd $GITHUB_WORKSPACE 
         sh auto.sh
         sh auto.sh
