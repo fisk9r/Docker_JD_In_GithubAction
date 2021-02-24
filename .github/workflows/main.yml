@@ -31,17 +31,12 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-    - name: Clone source code
-      working-directory: /workdir
-      run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH jd_scripts
-        ln -sf /workdir/jd_scripts $GITHUB_WORKSPACE/jd_scripts
-        
-        
+
     - name: 运行ls脚本
       run: |
         ls $GITHUB_WORKSPACE
+        echo "111111111111111111111111111111111"
+        ls /workdir
     - name: Create tmate session
       #uses: cyz0105/debugger-action@mai
       run: |
