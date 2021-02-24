@@ -6,7 +6,7 @@ on:
     # cron表达式，时区是UTC时间，比我们早8小时，如上所表示的是每天0点0分（24点整）
     # 建议每个人通过设置 GitHub Environments 的方式来设定为自己的目标运行时间（详细设置方法见文档说明）
 jobs:
-  run-bilibili-tool:
+  run-JD-tool:
     runs-on: ubuntu-latest
     environment: Production
     steps:
@@ -15,6 +15,9 @@ jobs:
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
         pip3 install --upgrade pip
         pip install docker-compose
+    - name: 运行脚本
+      run: |
         cd $GITHUB_WORKSPACE
         ls
+        bash auto.sh
         
