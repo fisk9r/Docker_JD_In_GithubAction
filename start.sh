@@ -1,42 +1,44 @@
-node jd_bean_change.js
-node jd_bean_sign.js
-node jd_fruit.js
-node jd_dreamFactory.js
-node jd_jxnc.js
-node jd_beauty.js
-node jd_bean_home.js
-node jd_small_home.js
-node jd_speed.js
-node jd_speed_sign.js
-node jd_cash.js
-node jd_superMarket.js
-node jd_sgmh.js
-node jd_club_lottery.js
-node jd_syj.js
-node jd_crazy_joy.js
-node jd_xgyl.js
-node jx_sign.js
-node jd_daily_egg.js
-node jd_family.js
-node jd_global_mh.js
-node jd_joy.js
-node jd_joy_feedPets.js
-node jd_joy_reward.js
-node jd_joy_run.js
-node jd_joy_steal.js
-node jd_kd.js
-node jd_moneyTree.js
-node jd_ms.js
-node jd_necklace.js
-node jd_nzmh.js
-node jd_pet.js
-node jd_pigPet.js
-node jd_plantBean.js
-node jd_price.js
-node jd_rankingList.js
-node jd_redPacket.js
-node jd_shop.js
-node jd_jdzz.js
-node jd_jdfactory.js
-node jd_unsubscribe.js
-node jd_crazy_joy_coin.js
+sudo docker-compose up -d
+sudo docker exec -i jd_scripts /bin/sh -c 'git pull'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_change.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_sign.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_fruit.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_dreamFactory.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jxnc.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_beauty.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_home.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_small_home.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_speed.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_speed_sign.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_cash.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_superMarket.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_sgmh.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_club_lottery.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_syj.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_crazy_joy.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_xgyl.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jx_sign.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_daily_egg.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_family.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_global_mh.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_feedPets.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_reward.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_run.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_steal.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_kd.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_moneyTree.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_ms.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_necklace.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_nzmh.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_pet.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_pigPet.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_plantBean.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_price.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_rankingList.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_redPacket.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_shop.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jdzz.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jdfactory.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_unsubscribe.js'
+sudo docker exec -i jd_scripts /bin/sh -c 'node jd_crazy_joy_coin.js'
