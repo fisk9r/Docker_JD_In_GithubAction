@@ -38,10 +38,185 @@ jobs:
     #    echo "::group::$(cat ssh.log | grep https)"
     #    for((i=1;i<3601;i+=10)); do if [ ! -f /tmp/finished ];then echo "/////////////////////////////////////////////";cat ssh.log | grep https;echo "/////////////////////////////////////////////";echo "  ";echo "  ";echo "type 'touch /tmp/finished' if you want to continue compile ";echo "  ";echo "  ";else break ;fi; sleep 10; done
     
-    - name: 运行脚本
+    - name: 启动  docker-compose
       run: |
         mkdir /home/runner/work/jd_scripts
         cp -r $GITHUB_WORKSPACE/* /home/runner/work/jd_scripts
         cd /home/runner/work/jd_scripts
-        sh start.sh
-        
+        sudo docker-compose up -d
+    - name: 查看  docker的环境变量
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'env'
+    - name: 运行    git pull
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'git pull'
+    - name: 运行    jd_bean_change.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_change.js'
+    - name: 运行    jd_bean_sign.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_sign.js'
+    - name: 运行    jd_fruit.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_fruit.js'
+    - name: 运行    jd_dreamFactory.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_dreamFactory.js'
+    - name: 运行    jd_jxnc.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jxnc.js'
+    - name: 运行    jd_beauty.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_beauty.js'
+    - name: 运行    jd_bean_home.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_bean_home.js'
+    - name: 运行    jd_small_home.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_small_home.js'
+    - name: 运行    jd_speed.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_speed.js'
+    - name: 运行    jd_speed_sign.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_speed_sign.js'
+    - name: 运行    jd_cash.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_cash.js'
+    - name: 运行    jd_superMarket.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_superMarket.js'
+    - name: 运行    jd_sgmh.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_sgmh.js'
+    - name: 运行    jd_club_lottery.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_club_lottery.js'
+    - name: 运行    jd_syj.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_syj.js'
+    - name: 运行    jd_crazy_joy.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_crazy_joy.js'
+    - name: 运行    jd_xgyl.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_xgyl.js'
+    - name: 运行    jx_sign.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jx_sign.js'
+    - name: 运行    jd_daily_egg.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_daily_egg.js'
+    - name: 运行    jd_family.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_family.js'
+    - name: 运行    jd_global_mh.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_global_mh.js'
+    - name: 运行    jd_joy.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy.js'
+    - name: 运行    jd_joy_feedPets.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_feedPets.js'
+    - name: 运行    jd_joy_reward.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_reward.js'
+    - name: 运行    jd_joy_run.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_run.js'
+    - name: 运行    jd_joy_steal.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_joy_steal.js'
+    - name: 运行    jd_kd.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_kd.js'
+    - name: 运行    jd_moneyTree.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_moneyTree.js'
+    - name: 运行    jd_ms.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_ms.js'
+    - name: 运行    jd_necklace.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_necklace.js'
+    - name: 运行    jd_nzmh.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_nzmh.js'
+    - name: 运行    jd_pet.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_pet.js'
+    - name: 运行    jd_pigPet.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_pigPet.js'
+    - name: 运行    jd_plantBean.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_plantBean.js'
+    - name: 运行    jd_price.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_price.js'
+    - name: 运行    jd_rankingList.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_rankingList.js'
+    - name: 运行    jd_redPacket.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_redPacket.js'
+    - name: 运行    jd_shop.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_shop.js'
+    - name: 运行    jd_jdzz.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jdzz.js'
+    - name: 运行    jd_jdfactory.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_jdfactory.js'
+    - name: 运行    jd_unsubscribe.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_unsubscribe.js'
+    - name: 运行    jd_crazy_joy_coin.js
+      run: |
+        cd /home/runner/work/jd_scripts
+        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_crazy_joy_coin.js'
