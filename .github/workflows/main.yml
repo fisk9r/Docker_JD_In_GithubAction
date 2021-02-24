@@ -5,16 +5,39 @@ on:
     - cron: '0 16 * * *' 
     # cron表达式，时区是UTC时间，比我们早8小时，如上所表示的是每天0点0分（24点整）
     # 建议每个人通过设置 GitHub Environments 的方式来设定为自己的目标运行时间（详细设置方法见文档说明）
+env:
+  REPO_URL: https://github.com/cyz0105/Docker_JD_In_GithubAction.git
+  REPO_BRANCH: master
 jobs:
   run-JD-tool:
     runs-on: ubuntu-latest
     environment: Production
     steps:
-    - name: 安装docker
+    - name: Checkout
+      uses: actions/checkout@main
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
         pip3 install --upgrade pip
         pip install docker-compose
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
+    - name: Clone source code
+      working-directory: /workdir
+      run: |
+        df -hT $PWD
+        git clone $REPO_URL -b $REPO_BRANCH jd_scripts
+        ln -sf /workdir/jd_scripts $GITHUB_WORKSPACE/jd_scripts
+        
+        
     - name: 运行ls脚本
       run: |
         ls $GITHUB_WORKSPACE
