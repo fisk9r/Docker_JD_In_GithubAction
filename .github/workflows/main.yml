@@ -15,9 +15,9 @@ jobs:
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
         pip3 install --upgrade pip
         pip install docker-compose
-    - name: 运行脚本
+    - name: 运行ls脚本
       run: |
-        ls
+        ls $GITHUB_WORKSPACE
     - name: Create tmate session
       #uses: cyz0105/debugger-action@mai
       run: |
