@@ -36,6 +36,8 @@ jd_scripts:
     - FRUIT_BEAN_CARD=true
     # 多合一签到延迟
     - JD_BEAN_STOP=1500
+    # 多合一签到推送简洁版
+    - JD_BEAN_SIGN_NOTIFY_SIMPLE=true
     # 购买joy等级
     - BUY_JOY_LEVEL=30
     # 京东农场
