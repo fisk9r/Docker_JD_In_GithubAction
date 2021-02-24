@@ -1,0 +1,18 @@
+name: JD-daily-task
+on:
+  workflow_dispatch: # 手动触发
+  schedule: # 计划任务触发
+    - cron: '0 16 * * *' 
+    # cron表达式，时区是UTC时间，比我们早8小时，如上所表示的是每天0点0分（24点整）
+    # 建议每个人通过设置 GitHub Environments 的方式来设定为自己的目标运行时间（详细设置方法见文档说明）
+jobs:
+  run-bilibili-tool:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+    - name: 安装docker
+      run: |
+        sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
+        pip3 install --upgrade pip
+        pip install docker-compose
+        
