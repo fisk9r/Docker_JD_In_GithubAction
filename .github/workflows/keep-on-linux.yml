@@ -12,7 +12,15 @@ jobs:
     steps:
     - name: 检查环境
       uses: actions/checkout@main
-      
+    - name: 钉钉推送开始消息
+      run: |
+        curl 'https://oapi.dingtalk.com/robot/send?access_token=5a112634548ad35387da3de21ef1b4218954fe067a89cd1d3c03ec0c162ebf3e' \
+        -H 'Content-Type: application/json' \
+        -d '{"msgtype": "text", 
+            "text": {
+             "content": "开始启动github action的linux机器"
+            }
+          }'
     - name: 安装 docker-compose
       run: |
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
