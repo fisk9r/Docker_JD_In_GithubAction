@@ -21,7 +21,7 @@ jobs:
     - name: Set time zone
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
       
-    - name: 钉钉推送开始消息
+    - name: 企业微信开始推送消息
       run: |
         curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=1ff2a6f8-704b-403c-8cae-23d1c0287021' \
         -H 'Content-Type: application/json' \
