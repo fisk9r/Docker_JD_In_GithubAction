@@ -2,7 +2,7 @@ name: keep-run-to-cron
 on:
   workflow_dispatch: # 手动触发
   schedule: # 计划任务触发/
-    - cron: '59 3,9,15,21 * * *' 
+    - cron: '30 3,4,9,15,21 * * *' 
     # cron表达式，时区是UTC时间，比我们早8小时
     
 jobs:
