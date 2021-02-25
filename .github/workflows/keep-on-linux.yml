@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@main
     - name: 钉钉推送开始消息
       run: |
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa' \
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=1ff2a6f8-704b-403c-8cae-23d1c0287021' \
         -H 'Content-Type: application/json' \
         -d '
         {
