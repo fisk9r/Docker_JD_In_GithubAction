@@ -12,6 +12,15 @@ jobs:
     steps:
     - name: 检查环境
       uses: actions/checkout@main
+    
+    # 输出IP
+    - name: IP
+      run: sudo curl ifconfig.me
+
+    # 设置服务器时区为东八区 
+    - name: Set time zone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      
     - name: 钉钉推送开始消息
       run: |
         curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=1ff2a6f8-704b-403c-8cae-23d1c0287021' \
@@ -25,6 +34,7 @@ jobs:
         }'
     - name: 安装 docker-compose
       run: |
+        
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
         pip3 install --upgrade pip
         pip install docker-compose
