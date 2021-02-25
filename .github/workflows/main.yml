@@ -207,7 +207,4 @@ jobs:
       run: |
         cd /home/runner/work/jd_scripts
         sudo docker exec -i jd_scripts /bin/sh -c 'node jd_unsubscribe.js'
-    - name: 运行    jd_crazy_joy_coin.js
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'node jd_crazy_joy_coin.js'
+    
