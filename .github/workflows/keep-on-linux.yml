@@ -14,13 +14,15 @@ jobs:
       uses: actions/checkout@main
     - name: 钉钉推送开始消息
       run: |
-        curl 'https://oapi.dingtalk.com/robot/send?access_token=5a112634548ad35387da3de21ef1b4218954fe067a89cd1d3c03ec0c162ebf3e' \
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa' \
         -H 'Content-Type: application/json' \
-        -d '{"msgtype": "text", 
-            "text": {
-             "content": "开始启动github action的linux机器"
-            }
-          }'
+        -d '
+        {
+              "msgtype": "text",
+              "text": {
+                  "content": "Github Actions Linux 挂机运行成功"
+              }
+        }'
     - name: 安装 docker-compose
       run: |
         sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
