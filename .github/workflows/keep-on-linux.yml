@@ -23,7 +23,8 @@ jobs:
       
     - name: 企业微信开始推送消息
       run: |
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=1ff2a6f8-704b-403c-8cae-23d1c0287021' \
+     # 完整的输入企业微信机器人webhook地址,例:https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxxxx-403c-8cae-23dxxxxxxx021
+        curl '${{secrets.CHARGECOMMENT}}' \
         -H 'Content-Type: application/json' \
         -d '
         {
