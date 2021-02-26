@@ -8,7 +8,7 @@ on:
 jobs:
   run-JD-tool:
     runs-on: ubuntu-latest
-    environment: Production
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
     - name: 检查环境
       uses: actions/checkout@main
