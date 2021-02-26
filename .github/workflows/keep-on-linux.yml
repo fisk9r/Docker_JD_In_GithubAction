@@ -40,7 +40,6 @@ jobs:
         pip install docker-compose
         
     #- name: Create tmate session
-    #  uses: cyz0105/debugger-action@mai
     #  run: |
     #    cp $GITHUB_WORKSPACE/ssh2action.sh ./script.sh
     #    chmod +x ./script.sh
