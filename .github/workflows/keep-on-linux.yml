@@ -69,4 +69,4 @@ jobs:
         sudo docker exec -i jd_scripts /bin/sh -c 'env'
     - name: 等待cron运行
       run: |
-        sleep 21540
+        sleep 21480
