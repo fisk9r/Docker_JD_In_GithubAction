@@ -42,10 +42,6 @@ jobs:
         cp -r $GITHUB_WORKSPACE/* /home/runner/work/jd_scripts
         cd /home/runner/work/jd_scripts
         sudo docker-compose up -d
-    - name: git pull
-      run: |
-        cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'git pull'
     - name: 查看  docker的环境变量
       run: |
         cd /home/runner/work/jd_scripts
