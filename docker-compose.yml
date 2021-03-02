@@ -51,7 +51,8 @@ jd_scripts:
     - JXNC_SHARECODES=
     # 闪购盲盒
     - JDSGMH_SHARECODES=
-
+    # 财富岛
+    - JDCFD_SHARECODES=
 
 
     # 农场使用水滴换豆卡
