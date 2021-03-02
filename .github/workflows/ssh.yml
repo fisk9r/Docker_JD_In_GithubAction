@@ -6,7 +6,7 @@ on:
     # cron表达式，时区是UTC时间
     
 jobs:
-  run-JD-tool:
+  ssh:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
