@@ -1,0 +1,47 @@
+name: ssh
+on:
+  workflow_dispatch: # 手动触发
+  #schedule: # 计划任务触发/
+   # - cron: '17 3,9,15,21 * * *' 
+    # cron表达式，时区是UTC时间
+    
+jobs:
+  run-JD-tool:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+    - name: 检查环境
+      uses: actions/checkout@main
+    
+    # 输出IP
+    - name: IP
+      run: sudo curl ifconfig.me
+
+    # 设置服务器时区为东八区 
+    - name: Set time zone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+     
+    - name: 安装 docker-compose
+      run: |
+        
+        sudo apt-get update && sudo apt-get install -y python3-pip curl vim git moreutils
+        pip3 install --upgrade pip
+        pip install docker-compose
+        
+    - name: Create tmate session
+      run: |
+        cp $GITHUB_WORKSPACE/ssh2action.sh ./script.sh
+        chmod +x ./script.sh
+        ./script.sh 2>&1 | tee ssh.log
+    
+    - name: SSH connection to Actions
+      run: |
+        echo 'please wait for 5 seconds'
+        sleep 5
+        echo 'your tmate link is:'
+        cat ssh.log | grep https
+        echo "请输入在tmate页面按一次Ctrl+C,再输入命令cd openwrt && make menuconfig 运行"
+        echo "输入'touch /tmp/finished'以结束ssh开始编译"
+        echo "::group::$(cat ssh.log | grep https)"
+        for((i=1;i<3601;i+=10)); do if [ ! -f /tmp/finished ];then echo "/////////////////////////////////////////////";cat ssh.log | grep https;echo "/////////////////////////////////////////////";echo "  ";echo "  ";echo "type 'touch /tmp/finished' if you want to continue compile ";echo "  ";echo "  ";else break ;fi; sleep 10; done
+    
