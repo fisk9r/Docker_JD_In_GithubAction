@@ -40,8 +40,8 @@ jobs:
         sleep 5
         echo 'your tmate link is:'
         cat ssh.log | grep https
-        echo "请输入在tmate页面按一次Ctrl+C,再输入命令cd openwrt && make menuconfig 运行"
-        echo "输入'touch /tmp/finished'以结束ssh开始编译"
+        echo "请输入在tmate页面按一次Ctrl+c,输入 docker exec -it jd_scripts /bin/sh "
+        echo "输入'touch /tmp/finished'以结束ssh"
         echo "::group::$(cat ssh.log | grep https)"
         for((i=1;i<3601;i+=10)); do if [ ! -f /tmp/finished ];then echo "/////////////////////////////////////////////";cat ssh.log | grep https;echo "/////////////////////////////////////////////";echo "  ";echo "  ";echo "type 'touch /tmp/finished' if you want to continue compile ";echo "  ";echo "  ";else break ;fi; sleep 10; done
     
