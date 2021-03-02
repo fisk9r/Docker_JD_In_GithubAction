@@ -8,7 +8,6 @@ on:
 jobs:
   run-JD-tool:
     runs-on: ubuntu-latest
-    environment: Production
     steps:
     - name: 检查环境
       uses: actions/checkout@main
