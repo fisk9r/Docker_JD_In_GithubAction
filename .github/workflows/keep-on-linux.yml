@@ -66,7 +66,7 @@ jobs:
     - name: 查看  docker的环境变量
       run: |
         cd /home/runner/work/jd_scripts
-        sudo docker exec -i jd_scripts /bin/sh -c 'git pull && env'
+        sudo docker exec -i jd_scripts /bin/sh -c 'env'
     - name: 等待cron运行
       run: |
         sleep 21480
